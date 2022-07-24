@@ -23,6 +23,25 @@
             height: 100px;
             top: 0px;
             left: 0px;
+            margin: -50px 0 0 -50px;
+            transition: all 500ms cubic-bezier(0.800, 0.000, 0.245, 1.000);
+        }
+
+        button {
+            font-size: 40px;
+            font-size: bold;
+            background: #fff;
+            color: red;
+            padding: 30px 80px;
+            margin: 50px;
+            cursor: pointer;
+            transition: all .5s cubic-bezier(0.800, 0.000, 0.245, 1.000);
+        }
+        button:hover {
+            background-color: red;
+            color: #fff;
+            font-size: 80px;
+            padding: 80px 150px;
         }
     </style>
 </head>
@@ -39,12 +58,13 @@
         h1 = document.querySelector('h1');
         cursor = document.querySelector('.cursor');
 
-        window.addEventListener('mousemove', (e) => {
+        window.addEventListener('click', (e) => {
             x = e.clientX;
             y = e.clientY;
+            cursor.style.transform = `translate(${x}px, ${y}px`;
         })
 
-        loop();
+        // loop();
     }
 
     function loop() {
@@ -59,8 +79,9 @@
 </script>
 
 <body>
-    <h1>test</h1>
+    <!-- <h1>test</h1> -->
     <div class="cursor"></div>
+    <button>START</button>
 </body>
 
 </html>
